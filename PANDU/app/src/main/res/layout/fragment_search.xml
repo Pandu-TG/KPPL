@@ -27,7 +27,7 @@
         android:elevation="@dimen/margin">
         <ImageButton
             android:id="@+id/search_bar"
-            android:layout_width="360dp"
+            android:layout_width="400dp"
             android:layout_height="50dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"

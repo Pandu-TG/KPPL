@@ -37,11 +37,12 @@
         <!--this changes the font face of the helper text-->
         <item name="fontFamily">@font/raleway_light</item>
         <item name="android:fontFamily">@font/raleway_light</item>
-        <item name="android:textSize">16pt</item>
+        <!--<item name="android:textSize">16pt</item>-->
     </style>
 
     <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <!--this makes the 10 dp of cut corners of the MDC EditText-->
+        <item name="strokeColor">@color/white</item>
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">24dp</item>
     </style>

@@ -3,7 +3,7 @@
     package="com.stigma15.pandu">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -14,9 +14,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PANDU">
         <activity
+            android:name=".Activity.ProfileActivity"
+            android:label="@string/title_activity_profile"
+            android:theme="@style/Theme.PANDU.NoActionBar"></activity>
+        <activity
+            android:name=".Activity.ProfileActivirt"
+            android:label="@string/title_activity_profile_activirt"
+            android:theme="@style/Theme.PANDU.NoActionBar"></activity>
+        <activity
+            android:name=".Activity.Profile"
+            android:label="@string/title_activity_profile"
+            android:theme="@style/Theme.PANDU.NoActionBar" />
+        <activity
+            android:name=".Activity.MainActivity2"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/Theme.PANDU.NoActionBar" />
+        <activity
             android:name=".Activity.ScrollingActivity"
             android:label="@string/title_activity_scrolling"
-            android:theme="@style/Theme.PANDU.NoActionBar"></activity>
+            android:theme="@style/Theme.PANDU.NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -41,11 +57,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.OnboardingActivity" />
+        <activity
+            android:name=".Activity.OnboardingActivity"
+            android:noHistory="true" />
         <activity android:name=".Activity.MainActivity" />
         <activity android:name=".Activity.OverviewActivity" />
         <activity android:name=".Activity.LoginActivity" />
-        <activity android:name=".Activity.SignUpActivity"/>
+        <activity android:name=".Activity.SignUpActivity" />
     </application>
 
 </manifest>

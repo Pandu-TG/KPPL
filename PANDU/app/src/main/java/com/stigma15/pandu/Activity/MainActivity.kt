@@ -1,6 +1,7 @@
 package com.stigma15.pandu.Activity
 
 import android.app.Activity
+import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +14,7 @@ import com.stigma15.pandu.Fragment.FavoriteFragment
 import com.stigma15.pandu.Fragment.HomeFragment
 import com.stigma15.pandu.Fragment.SearchFragment
 import com.stigma15.pandu.R
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -63,6 +65,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             true
+
         }
 
         //Hide status bar
@@ -79,6 +82,9 @@ class MainActivity : AppCompatActivity() {
             setWindowFlag(this, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false)
             getWindow().setStatusBarColor(Color.TRANSPARENT)
         }
+
+
+
     }
     fun setWindowFlag(activity: Activity, bits:Int, on:Boolean) {
         val win = activity.getWindow()

@@ -1,5 +1,6 @@
 package com.stigma15.pandu.Fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.get
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
+import com.stigma15.pandu.Activity.ProfileActivity
 import com.stigma15.pandu.Adapter.CardViewPopularHomeAdapter
 import com.stigma15.pandu.Adapter.SliderHomeAdapter
 import com.stigma15.pandu.MyData.MyDataPopular
@@ -137,6 +139,15 @@ class HomeFragment : Fragment() {
                 )
 
             }
+        }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        btn_profil.setOnClickListener {
+            val intent = Intent (activity, ProfileActivity::class.java)
+            startActivity(intent)
         }
     }
 }

@@ -84,7 +84,6 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-
     }
     fun setWindowFlag(activity: Activity, bits:Int, on:Boolean) {
         val win = activity.getWindow()

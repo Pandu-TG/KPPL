@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:name="com.google.android.gms.maps.SupportMapFragment"
@@ -24,6 +25,7 @@
         android:backgroundTint="#6DA0C5"
         android:fontFamily="@font/opensans_bold"
         android:text="Open di Google Maps"
+        android:textColor="@color/white"
         android:textAllCaps="false"
         android:textSize="18sp"
         map:cornerRadius="11dp"
@@ -36,11 +38,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin"
-        android:layout_marginTop="@dimen/margin"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/opensans_bold"
         android:background="@drawable/ic_back_maps"
         android:textAllCaps="false"
         android:textSize="18sp"
+        android:elevation="@dimen/margin"
         map:layout_constraintTop_toTopOf="parent"
         map:layout_constraintLeft_toLeftOf="parent"
         map:layout_constraintLeft_toRightOf="parent" />

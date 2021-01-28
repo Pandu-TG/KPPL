@@ -16,19 +16,8 @@
         <activity
             android:name=".Activity.ProfileActivity"
             android:label="@string/title_activity_profile"
-            android:theme="@style/Theme.PANDU.NoActionBar"></activity>
-        <activity
-            android:name=".Activity.ProfileActivirt"
-            android:label="@string/title_activity_profile_activirt"
-            android:theme="@style/Theme.PANDU.NoActionBar"></activity>
-        <activity
-            android:name=".Activity.Profile"
-            android:label="@string/title_activity_profile"
-            android:theme="@style/Theme.PANDU.NoActionBar" />
-        <activity
-            android:name=".Activity.MainActivity2"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.PANDU.NoActionBar" />
+            android:theme="@style/Theme.PANDU.NoActionBar"/>
+
         <activity
             android:name=".Activity.ScrollingActivity"
             android:label="@string/title_activity_scrolling"
@@ -47,7 +36,8 @@
 
         <activity
             android:name=".Activity.NavigationActivity"
-            android:label="@string/title_activity_navigation" />
+            android:label="@string/title_activity_navigation"
+            android:theme="@style/Theme.PANDU.NoActionBar"/>
         <activity
             android:name=".Activity.SplashScreen"
             android:theme="@style/SplashScreenTheme">

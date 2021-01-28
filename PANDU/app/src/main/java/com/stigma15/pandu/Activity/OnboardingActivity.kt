@@ -8,12 +8,14 @@ import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.viewpager2.widget.ViewPager2
 import com.stigma15.pandu.Adapter.ViewPagerOnboardingAdapter
 import com.stigma15.pandu.R
 import com.stigma15.pandu.onBoarding.Onboarding1
 import com.stigma15.pandu.onBoarding.Onboarding2
 import com.stigma15.pandu.onBoarding.Onboarding3
 import kotlinx.android.synthetic.main.activity_onboarding.*
+
 
 class OnboardingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +34,6 @@ class OnboardingActivity : AppCompatActivity() {
                 this.supportFragmentManager,
                 lifecycle
         )
-
         viewPager.adapter = adapter
 
         if (Build.VERSION.SDK_INT >= 19 && Build.VERSION.SDK_INT < 21)
@@ -48,6 +49,7 @@ class OnboardingActivity : AppCompatActivity() {
             setWindowFlag(this, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false)
             getWindow().setStatusBarColor(Color.TRANSPARENT)
         }
+
     }
     fun setWindowFlag(activity: Activity, bits:Int, on:Boolean) {
         val win = activity.getWindow()

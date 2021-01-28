@@ -72,7 +72,7 @@
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     android:contentDescription="@string/todo"
-                    android:src="@drawable/ic_rectangle_44"
+                    app:srcCompat="@drawable/ic_rectangle_44"
                     android:layout_marginEnd="-1dp" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -82,21 +82,41 @@
                 android:layout_height="match_parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent">
-                <TextView
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/rec_txt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="24sp"
-                    android:text="@string/rec"
-                    android:textColor="@color/white"
-                    android:fontFamily="@font/poppins_medium"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="50dp"
                     android:layout_marginRight="20dp"
-                    android:layout_marginLeft="20dp"/>
+                    android:layout_marginLeft="20dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent">
+                    <TextView
+                        android:id="@+id/textsd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="24sp"
+                        android:text="@string/rec"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/poppins_medium"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+                    <ImageView
+                        android:layout_width="150px"
+                        android:layout_height="150px"
+                        android:id="@+id/btn_profil"
+                        android:background="@drawable/ic_baseline_account_circle_24"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintRight_toRightOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/search_btn_home"
                     app:layout_constraintTop_toBottomOf="@id/rec_txt"
                     android:layout_width="match_parent"
                     android:layout_marginTop="10dp"
@@ -104,7 +124,6 @@
                     android:layout_height="48dp"
                     android:layout_marginRight="20dp"
                     android:alpha="0.5">
-
                     <ImageButton
                         android:id="@+id/search_bar"
                         android:layout_width="match_parent"
@@ -118,7 +137,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         android:layout_marginLeft="20dp"
-                        android:src="@drawable/ic_baseline_search_24"
+                        app:srcCompat="@drawable/ic_baseline_search_24"
                         android:layout_marginStart="20dp" />
                     <TextView
                         app:layout_constraintLeft_toRightOf="@id/search_btn"

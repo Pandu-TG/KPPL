@@ -1,18 +1,21 @@
 package com.stigma15.pandu.Activity
 
 import android.app.Activity
+import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.stigma15.pandu.Fragment.FavoriteFragment
 import com.stigma15.pandu.Fragment.HomeFragment
 import com.stigma15.pandu.Fragment.SearchFragment
 import com.stigma15.pandu.R
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         homeFragment = HomeFragment()
         supportFragmentManager
@@ -36,7 +39,6 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId){
-
                 R.id.home ->{
                     homeFragment = HomeFragment()
                     supportFragmentManager
@@ -63,6 +65,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             true
+
         }
 
         //Hide status bar
@@ -79,6 +82,8 @@ class MainActivity : AppCompatActivity() {
             setWindowFlag(this, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false)
             getWindow().setStatusBarColor(Color.TRANSPARENT)
         }
+
+
     }
     fun setWindowFlag(activity: Activity, bits:Int, on:Boolean) {
         val win = activity.getWindow()

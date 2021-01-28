@@ -4,24 +4,37 @@ import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
 import android.os.Build
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.Window
 import android.view.WindowManager
-import com.google.android.material.appbar.CollapsingToolbarLayout
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.stigma15.pandu.R
-import kotlinx.android.synthetic.main.activity_scrolling.*
+import kotlinx.android.synthetic.main.activity_confirm_log_out_dialog.*
 
-class ScrollingActivity : AppCompatActivity() {
+class ConfirmLogOutDialog : AppCompatActivity() {
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_scrolling)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
-        navigate.setOnClickListener {  val intent = Intent(this, NavigationActivity::class.java)
-        startActivity(intent)}
+        super.onCreate(savedInstanceState)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
+        setContentView(R.layout.activity_confirm_log_out_dialog)
+        auth = Firebase.auth
+        val currentUser = auth.currentUser
+
+        btn_yesout.setOnClickListener{
+            signOut()
+        }
+        btn_noout.setOnClickListener{
+            finish()
+        }
 
         //Hide status bar
         if (Build.VERSION.SDK_INT >= 19 && Build.VERSION.SDK_INT < 21)
@@ -36,6 +49,15 @@ class ScrollingActivity : AppCompatActivity() {
         {
             setWindowFlag(this, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, false)
             getWindow().setStatusBarColor(Color.TRANSPARENT)
+        }
+    }
+    private fun signOut() {
+        auth.signOut()
+        val currentUser = auth.currentUser
+        if (currentUser == null) {
+            val intent = Intent(this@ConfirmLogOutDialog, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
     fun setWindowFlag(activity: Activity, bits:Int, on:Boolean) {

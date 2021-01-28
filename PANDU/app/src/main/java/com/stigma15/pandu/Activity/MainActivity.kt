@@ -37,7 +37,6 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId){
-
                 R.id.home ->{
                     homeFragment = HomeFragment()
                     supportFragmentManager

@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.get
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.stigma15.pandu.Activity.ProfileActivity
 import com.stigma15.pandu.Adapter.CardViewPopularHomeAdapter
 import com.stigma15.pandu.Adapter.SliderHomeAdapter
@@ -26,6 +27,7 @@ class HomeFragment : Fragment() {
     private val list = ArrayList<MyDataPopular>()
     private val listd = ArrayList<MyDataRecomendation>()
     private val sliderHomeAdapter = SliderHomeAdapter(listd)
+    lateinit var searchFragment: SearchFragment
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -42,6 +44,15 @@ class HomeFragment : Fragment() {
         showViewPager()
         setupIndicators()
         setCurrentIndicator(0)
+
+        search_btn.setOnClickListener {
+
+            searchFragment = SearchFragment()
+            parentFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame_layout, searchFragment)
+                    .setCustomAnimations(android.R.anim.slide_in_left, 0, 0, android.R.anim.slide_out_right)
+                    .commit() }
 
 
         rec_container.registerOnPageChangeCallback(object :
@@ -144,6 +155,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
         btn_profil.setOnClickListener {
             val intent = Intent (activity, ProfileActivity::class.java)

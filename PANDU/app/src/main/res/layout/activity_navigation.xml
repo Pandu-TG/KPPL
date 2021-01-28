@@ -24,7 +24,7 @@
         android:layout_marginRight="@dimen/margin"
         android:backgroundTint="#6DA0C5"
         android:fontFamily="@font/opensans_bold"
-        android:text="Open di Google Maps"
+        android:text="Buka di Google Maps"
         android:textColor="@color/white"
         android:textAllCaps="false"
         android:textSize="18sp"

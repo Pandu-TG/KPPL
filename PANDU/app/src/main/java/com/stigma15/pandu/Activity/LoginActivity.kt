@@ -46,8 +46,7 @@ class LoginActivity : AppCompatActivity(){
         }
 
         signUp.setOnClickListener { val intent = Intent(this, SignUpActivity::class.java)
-            startActivity(intent)
-            finish()}
+            startActivity(intent) }
 
         if (Build.VERSION.SDK_INT >= 19 && Build.VERSION.SDK_INT < 21)
         {

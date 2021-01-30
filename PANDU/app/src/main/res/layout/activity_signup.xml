@@ -128,13 +128,11 @@
                 android:id="@+id/inputnohp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="   No Hp"
+                android:hint="   Phone Number"
                 android:textSize="12dp"
                 android:inputType="textEmailAddress"
                 android:textColor="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
-
-
 
         <CheckBox
             android:id="@+id/checkBox2"
@@ -200,6 +198,38 @@
                 android:textAllCaps="false"
                 app:layout_constraintBottom_toBottomOf="parent" />
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signUp_con">
+            <TextView
+                android:id="@+id/txdr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:text="already have an account?"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+            <TextView
+                android:id="@+id/LogIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="Log In"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/txdr"
+                android:layout_marginLeft="6dp"
+                />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

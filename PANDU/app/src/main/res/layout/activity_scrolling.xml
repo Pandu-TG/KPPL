@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.ScrollingActivity"
+    android:background="@color/background_material_light"
     >
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -261,6 +262,7 @@
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
     <Button
+        android:id="@+id/back_scrolling"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         style="@style/Widget.AppCompat.Button.Borderless"

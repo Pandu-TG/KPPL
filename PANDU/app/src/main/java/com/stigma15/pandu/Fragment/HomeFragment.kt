@@ -11,15 +11,19 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.get
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.transition.TransitionInflater
 import androidx.viewpager2.widget.ViewPager2
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.stigma15.pandu.Activity.MainActivity
 import com.stigma15.pandu.Activity.ProfileActivity
 import com.stigma15.pandu.Adapter.CardViewPopularHomeAdapter
 import com.stigma15.pandu.Adapter.SliderHomeAdapter
 import com.stigma15.pandu.MyData.MyDataPopular
 import com.stigma15.pandu.MyData.MyDataRecomendation
 import com.stigma15.pandu.R
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
@@ -29,31 +33,36 @@ class HomeFragment : Fragment() {
     private val sliderHomeAdapter = SliderHomeAdapter(listd)
     lateinit var searchFragment: SearchFragment
 
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
+        if(list.isEmpty()){
+            list.addAll(getListMyDatas())
+        }
+        if(listd.isEmpty()){
+            listd.addAll(getListMyDatasd())
+        }
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         rv_mydata.setHasFixedSize(true)
-        list.addAll(getListMyDatas())
-        listd.addAll(getListMyDatasd())
+
         showRecyclerCardView()
         showViewPager()
         setupIndicators()
         setCurrentIndicator(0)
 
+
+        btn_profil.setOnClickListener {
+            val intent = Intent(activity, ProfileActivity::class.java)
+            startActivity(intent)
+        }
         search_btn.setOnClickListener {
-
-            searchFragment = SearchFragment()
-            parentFragmentManager
-                    .beginTransaction()
-                    .replace(R.id.frame_layout, searchFragment)
-                    .setCustomAnimations(android.R.anim.slide_in_left, 0, 0, android.R.anim.slide_out_right)
-                    .commit() }
-
+            (activity as MainActivity?)!!.searchPage()
+        }
 
         rec_container.registerOnPageChangeCallback(object :
         ViewPager2.OnPageChangeCallback(){
@@ -62,7 +71,6 @@ class HomeFragment : Fragment() {
                 setCurrentIndicator(position)
             }
         })
-
     }
 
     fun getListMyDatas(): ArrayList<MyDataPopular> {
@@ -152,14 +160,10 @@ class HomeFragment : Fragment() {
             }
         }
     }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    /*override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
 
-        btn_profil.setOnClickListener {
-            val intent = Intent (activity, ProfileActivity::class.java)
-            startActivity(intent)
-        }
-    }
+        }*/
+
 }

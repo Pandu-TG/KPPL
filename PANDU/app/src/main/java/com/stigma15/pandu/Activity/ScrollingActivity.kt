@@ -20,8 +20,12 @@ class ScrollingActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scrolling)
 
+        back_scrolling.setOnClickListener{
+            onBackPressed()
+        }
         navigate.setOnClickListener {  val intent = Intent(this, NavigationActivity::class.java)
-        startActivity(intent)}
+        startActivity(intent)
+        }
 
         //Hide status bar
         if (Build.VERSION.SDK_INT >= 19 && Build.VERSION.SDK_INT < 21)

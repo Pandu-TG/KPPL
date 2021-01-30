@@ -22,14 +22,17 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginTop="100dp"/>
+            app:layout_constraintBottom_toTopOf="@+id/form"
+            />
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/form"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/logoa"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginBottom="100dp">
+
+            app:layout_constraintRight_toRightOf="parent">
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -176,9 +179,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="@dimen/margin"
+                app:layout_constraintTop_toBottomOf="@id/login_con"
                 app:layout_constraintRight_toRightOf="parent">
-
                 <TextView
                     android:id="@+id/ss"
                     android:layout_width="match_parent"
@@ -204,9 +207,45 @@
                     android:layout_marginLeft="6dp"
                     />
             </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/sss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin"
+                app:layout_constraintTop_toBottomOf="@id/ad"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="Or"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="16sp"
+                android:textColor="@color/white"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/sss"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginTop="@dimen/margin"
+                app:layout_constraintRight_toRightOf="parent">
+                <ImageButton
+                    android:id="@+id/gmail"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:background="@drawable/ic_flat_color_icons_google"
+                    />
+                <ImageButton
+                    android:id="@+id/Phone"
+                    android:layout_width="40dp"
+                    android:layout_marginLeft="@dimen/margin"
+                    android:layout_height="40dp"
+                    android:background="@drawable/ic_logos_facebook"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/gmail"
+                    app:layout_constraintRight_toRightOf="parent"/>
 
 
-
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

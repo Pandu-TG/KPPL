@@ -15,8 +15,14 @@ class SplashScreen : FragmentActivity() {
         iv_note.alpha = 0f
         iv_note.animate().setDuration(1000).alpha(1f).withEndAction{
             if(onBoardingFinished()){
-                val i = Intent(this, LoginActivity::class.java)
-                startActivity(i)
+                if(LoggedIn()) {
+                    val i = Intent(this, MainActivity::class.java)
+                    startActivity(i)
+                }
+                else{
+                    val i = Intent(this, LoginActivity::class.java)
+                    startActivity(i)
+                }
             }
             else{
                 val i = Intent(this, OnboardingActivity::class.java)
@@ -30,5 +36,9 @@ class SplashScreen : FragmentActivity() {
     private fun onBoardingFinished(): Boolean {
         val sharedPref = this@SplashScreen.getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
         return sharedPref.getBoolean("Finished", false)
+    }
+    private fun LoggedIn(): Boolean {
+        val sharedPref = this@SplashScreen.getSharedPreferences("Log in", Context.MODE_PRIVATE)
+        return sharedPref.getBoolean("Logged in", false)
     }
 }

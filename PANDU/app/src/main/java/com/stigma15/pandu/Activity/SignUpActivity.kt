@@ -40,6 +40,7 @@ class SignUpActivity : AppCompatActivity(){
             getWindow().setStatusBarColor(Color.TRANSPARENT)
         }
 
+        LogIn.setOnClickListener { onBackPressed() }
         SignUp_button.setOnClickListener{
             val username = reginputusername.text.toString()
             val email = reginputEmail.text.toString()

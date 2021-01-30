@@ -2,6 +2,7 @@ package com.stigma15.pandu.Activity
 
 import android.app.Activity
 import android.app.ProgressDialog
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Build
@@ -33,11 +34,14 @@ class LoginActivity : AppCompatActivity(){
                     if (!it.isSuccessful){ return@addOnCompleteListener
                         val intent = Intent (this, MainActivity::class.java)
                         startActivity(intent)
+                        finish()
                     }
                     else
                         Toast.makeText(this, "Succesfully Login", Toast.LENGTH_SHORT).show()
+                    LoggedIn()
                     val intent = Intent (this, MainActivity::class.java)
                     startActivity(intent)
+                    finish()
                 }
                 .addOnFailureListener{
                     Log.d("Main", "Failed Login: ${it.message}")
@@ -66,6 +70,7 @@ class LoginActivity : AppCompatActivity(){
         logoa.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
     //Hide status bar
@@ -82,5 +87,11 @@ class LoginActivity : AppCompatActivity(){
             winParams.flags = winParams.flags and bits.inv()
         }
         win.setAttributes(winParams)
+    }
+    private fun LoggedIn(){
+        val sharedPref = this.getSharedPreferences("Log in", Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
+        editor.putBoolean("Logged in", true)
+        editor.apply()
     }
 }

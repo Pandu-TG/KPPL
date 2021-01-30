@@ -107,7 +107,7 @@
                         android:layout_width="150px"
                         android:layout_height="150px"
                         android:id="@+id/btn_profil"
-                        android:background="@drawable/ic_baseline_account_circle_24"
+                        android:background="@drawable/ellipse"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintRight_toRightOf="parent" />

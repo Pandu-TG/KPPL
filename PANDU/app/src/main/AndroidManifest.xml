@@ -16,12 +16,11 @@
         <activity
             android:name=".Activity.ProfileActivity"
             android:label="@string/title_activity_profile"
-            android:theme="@style/Theme.PANDU.NoActionBar"/>
-
+            android:theme="@style/Theme.PANDU.NoActionBar" />
         <activity
             android:name=".Activity.ScrollingActivity"
             android:label="@string/title_activity_scrolling"
-            android:theme="@style/Theme.PANDU.NoActionBar" />
+            android:theme="@style/Theme.PANDU.SlidrActivityTheme" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -37,7 +36,7 @@
         <activity
             android:name=".Activity.NavigationActivity"
             android:label="@string/title_activity_navigation"
-            android:theme="@style/Theme.PANDU.NoActionBar"/>
+            android:theme="@style/Theme.PANDU.NoActionBar" />
         <activity
             android:name=".Activity.SplashScreen"
             android:theme="@style/SplashScreenTheme">
@@ -51,7 +50,8 @@
             android:name=".Activity.OnboardingActivity"
             android:noHistory="true" />
         <activity android:name=".Activity.MainActivity" />
-        <activity android:name=".Activity.OverviewActivity" />
+        <activity android:name=".Activity.OverviewActivity"
+            android:theme="@style/Theme.PANDU.SlidrActivityTheme"/>
         <activity android:name=".Activity.LoginActivity" />
         <activity android:name=".Activity.SignUpActivity" />
     </application>

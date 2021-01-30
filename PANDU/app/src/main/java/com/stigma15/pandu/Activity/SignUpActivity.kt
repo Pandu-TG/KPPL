@@ -65,7 +65,7 @@ class SignUpActivity : AppCompatActivity(){
                         startActivity(intent)
                     } else
                         Toast.makeText(this, "Registrasi Berhasil", Toast.LENGTH_SHORT).show()
-                    val intent= Intent (this, LoginActivity::class.java)
+                    val intent = Intent (this, VerificationActivity::class.java)
                     startActivity(intent)
                 }
                 .addOnFailureListener{

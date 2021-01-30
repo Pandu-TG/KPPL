@@ -13,6 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PANDU">
+        <activity android:name=".Activity.VerificationActivity"
+            android:theme="@style/Theme.PANDU.NoActionBar"></activity>
         <activity
             android:name=".Activity.ProfileActivity"
             android:label="@string/title_activity_profile"
@@ -50,8 +52,9 @@
             android:name=".Activity.OnboardingActivity"
             android:noHistory="true" />
         <activity android:name=".Activity.MainActivity" />
-        <activity android:name=".Activity.OverviewActivity"
-            android:theme="@style/Theme.PANDU.SlidrActivityTheme"/>
+        <activity
+            android:name=".Activity.OverviewActivity"
+            android:theme="@style/Theme.PANDU.SlidrActivityTheme" />
         <activity android:name=".Activity.LoginActivity" />
         <activity android:name=".Activity.SignUpActivity" />
     </application>

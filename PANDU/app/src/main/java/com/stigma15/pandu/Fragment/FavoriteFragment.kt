@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.transition.TransitionInflater
 import com.stigma15.pandu.Adapter.CardViewFavoriteAdapter
 import com.stigma15.pandu.MyData.MyDataFavorite
 import com.stigma15.pandu.R
@@ -15,6 +16,11 @@ import kotlinx.android.synthetic.main.fragment_home.*
 class FavoriteFragment : Fragment() {
     private val listt = ArrayList<MyDataFavorite>()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val inflater = TransitionInflater.from(requireContext())
+
+    }
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         rv_mydata_fav.setHasFixedSize(true)

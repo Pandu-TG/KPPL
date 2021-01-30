@@ -1,6 +1,8 @@
 package com.stigma15.pandu.Fragment
 
+import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,13 +12,26 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.get
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.transition.TransitionInflater
 import androidx.viewpager2.widget.ViewPager2
+import com.bumptech.glide.Glide
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import com.stigma15.pandu.Activity.LoginActivity
+import com.stigma15.pandu.Activity.MainActivity
+import com.stigma15.pandu.Activity.ProfileActivity
 import com.stigma15.pandu.Adapter.CardViewPopularHomeAdapter
 import com.stigma15.pandu.Adapter.SliderHomeAdapter
 import com.stigma15.pandu.MyData.MyDataPopular
 import com.stigma15.pandu.MyData.MyDataRecomendation
 import com.stigma15.pandu.R
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
@@ -24,23 +39,48 @@ class HomeFragment : Fragment() {
     private val list = ArrayList<MyDataPopular>()
     private val listd = ArrayList<MyDataRecomendation>()
     private val sliderHomeAdapter = SliderHomeAdapter(listd)
+    private lateinit var auth: FirebaseAuth
+    lateinit var searchFragment: SearchFragment
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
+        if(list.isEmpty()){
+            list.addAll(getListMyDatas())
+        }
+        if(listd.isEmpty()){
+            listd.addAll(getListMyDatasd())
+        }
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         rv_mydata.setHasFixedSize(true)
-        list.addAll(getListMyDatas())
-        listd.addAll(getListMyDatasd())
+        auth = Firebase.auth
         showRecyclerCardView()
         showViewPager()
         setupIndicators()
         setCurrentIndicator(0)
 
+        val currentUser = auth.currentUser
+        if (currentUser == null) {
+            val intent = Intent(activity, LoginActivity::class.java)
+            startActivity(intent)
+
+        } else{
+            updateUI(currentUser)
+        }
+
+
+        btn_profill.setOnClickListener {
+            val intent = Intent(activity, ProfileActivity::class.java)
+            startActivity(intent)
+        }
+        search_btn.setOnClickListener {
+            (activity as MainActivity?)!!.searchPage()
+        }
 
         rec_container.registerOnPageChangeCallback(object :
         ViewPager2.OnPageChangeCallback(){
@@ -49,7 +89,6 @@ class HomeFragment : Fragment() {
                 setCurrentIndicator(position)
             }
         })
-
     }
 
     fun getListMyDatas(): ArrayList<MyDataPopular> {
@@ -139,4 +178,28 @@ class HomeFragment : Fragment() {
             }
         }
     }
+
+    private fun updateUI(currentUser: FirebaseUser) {
+        currentUser?.let {
+            val username = currentUser.displayName
+            val photoUrl = currentUser.photoUrl
+            if (TextUtils.isEmpty(username)) {
+                nama_profile.text = "User"
+            }
+            btn_profill.setImageURI(photoUrl)
+            if (TextUtils.isEmpty(username)) {
+                btn_profill.setImageURI(photoUrl)
+            } else
+                Glide.with(this)
+                    .load(photoUrl)
+                    .circleCrop()
+                    .into(btn_profill)
+        }
+    }
+    /*override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+        }*/
+
 }

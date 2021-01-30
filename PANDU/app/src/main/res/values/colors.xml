@@ -6,10 +6,12 @@
     <color name="light_green">#B5FCDB</color>
     <color name="blue_green">#71A9DB</color>
     <color name="teal_200">#FF03DAC5</color>
+    <color name="colorPrimaryRipple">#1071A9DB</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#C4C4C4</color>
-    <color name="transparent">#00000066</color>
+    <color name="white_halftrans">#41FFFFFF</color>
+    <color name="transparent">#00000000</color>
     <color name="blue_fb">#6D87C9</color>
 </resources>

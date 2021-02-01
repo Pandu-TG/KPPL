@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/card_view"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginBottom="4dp"
+    card_view:cardCornerRadius="19dp"
+    card_view:cardElevation="3dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="200dp">
+        <ImageView
+            android:id="@+id/item_popular"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/todo"
+            android:scaleType="centerCrop"
+            android:background="@drawable/shadow_bottop"
+            android:src="@color/light_green" />
+
+        <ImageView
+            android:id="@+id/sdd"
+            android:layout_width="400dp"
+            android:layout_height="240dp"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/todo"
+            android:scaleType="centerCrop"
+            android:background="@drawable/shadow_bottop"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:id="@+id/titledest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tittle_dest"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="20sp"
+                card_view:layout_constraintLeft_toLeftOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/popular_img"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/ic_baseline_location_on_24"
+                card_view:layout_constraintLeft_toLeftOf="parent"
+                card_view:layout_constraintTop_toBottomOf="@id/titledest" />
+
+            <TextView
+                android:id="@+id/locationd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:text="@string/loc"
+                android:fontFamily="@font/opensans_regular"
+                android:alpha="0.6"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                card_view:layout_constraintLeft_toRightOf="@id/popular_img"
+                card_view:layout_constraintTop_toBottomOf="@id/titledest"
+                card_view:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

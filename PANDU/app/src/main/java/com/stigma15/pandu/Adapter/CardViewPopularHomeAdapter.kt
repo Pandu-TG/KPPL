@@ -1,5 +1,6 @@
 package com.stigma15.pandu.Adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,8 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.stigma15.pandu.Activity.DetailScreenActivity
+import com.stigma15.pandu.Activity.OverviewActivity
 import com.stigma15.pandu.MyData.MyDataPopular
 import com.stigma15.pandu.R
 
@@ -25,8 +28,11 @@ class CardViewPopularHomeAdapter(private val listMyDatas: ArrayList<MyDataPopula
                 .into(holder.imgPhoto)
         holder.tvName.text = myData.name
         holder.tvDetail.text = myData.location
-        holder.itemView.setOnClickListener { Toast.makeText(holder.itemView.context, "Kamu memilih " +
-                listMyDatas[holder.adapterPosition].name, Toast.LENGTH_SHORT).show() }
+        /**
+        holder.itemView.setOnClickListener { val context=holder.itemView.context
+            val intent = Intent(context, DetailScreenActivity::class.java)
+            context.startActivity(intent)
+        } **/
     }
     override fun getItemCount(): Int {
         return listMyDatas.size

@@ -25,6 +25,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.stigma15.pandu.Fragment.HomeFragment
 import com.stigma15.pandu.R
 import kotlinx.android.synthetic.main.activity_login2.*
 
@@ -78,6 +79,20 @@ class LoginActivity : AppCompatActivity() {
         signUp.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
+        }
+
+        anoni.setOnClickListener{
+            FirebaseAuth.getInstance().signInAnonymously()
+                    .addOnCompleteListener(this) { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(this@LoginActivity, "Guest Mode",Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this, MainActivity::class.java)
+                            startActivity(intent)
+                        } else {
+                            Toast.makeText(
+                                    this@LoginActivity, "Authentication failed.", Toast.LENGTH_SHORT).show()
+                        }
+                    }
         }
 
         if (Build.VERSION.SDK_INT >= 19 && Build.VERSION.SDK_INT < 21) {

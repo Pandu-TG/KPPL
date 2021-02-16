@@ -1,9 +1,10 @@
 package com.stigma15.pandu.Fragment
 
+import android.app.Fragment
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
-import androidx.fragment.app.Fragment
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,7 +36,7 @@ import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
-class HomeFragment : Fragment() {
+class HomeFragment : androidx.fragment.app.Fragment() {
     private val list = ArrayList<MyDataPopular>()
     private val listd = ArrayList<MyDataRecomendation>()
     private val sliderHomeAdapter = SliderHomeAdapter(listd)
@@ -92,9 +93,9 @@ class HomeFragment : Fragment() {
     }
 
     fun getListMyDatas(): ArrayList<MyDataPopular> {
-        val dataName = resources.getStringArray(R.array.data_name)
-        val dataLocation = resources.getStringArray(R.array.data_location)
-        val dataPhoto = resources.getStringArray(R.array.data_photo)
+        val dataName = resources.getStringArray(R.array.data_namee)
+        val dataLocation = resources.getStringArray(R.array.data_locatione)
+        val dataPhoto = resources.getStringArray(R.array.data_photoe)
         val listMyData = ArrayList<MyDataPopular>()
         for (position in dataName.indices) {
             val myDatad = MyDataPopular(
@@ -183,9 +184,7 @@ class HomeFragment : Fragment() {
         currentUser?.let {
             val username = currentUser.displayName
             val photoUrl = currentUser.photoUrl
-            if (TextUtils.isEmpty(username)) {
-                nama_profile.text = "User"
-            }
+
             btn_profill.setImageURI(photoUrl)
             if (TextUtils.isEmpty(username)) {
                 btn_profill.setImageURI(photoUrl)

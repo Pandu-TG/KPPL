@@ -14,14 +14,38 @@
         <item>Wisata Korang</item>
     </string-array>
     <string-array name="data_location">
-        <item>Badung, sangad</item>
-        <item>Badung, bner</item>
-        <item>Bandung, barat</item>
+        <item>Bandung, Jawa Barat</item>
+        <item>Bandung, Jawa Barat</item>
+        <item>Bandung, Jawa Barat</item>
     </string-array>
     <string-array name="data_photo">
         <item>https://res.cloudinary.com/budiaji2711/image/upload/v1606488966/images/manuel-cosentino-n--CMLApjfI-unsplash_y4sbqe.jpg</item>
         <item>https://res.cloudinary.com/budiaji2711/image/upload/v1606488971/images/ycyLUcEoalE_1_j6w283.png</item>
         <item>https://res.cloudinary.com/budiaji2711/image/upload/v1606488966/images/Rectangle_38_rgl1au.png</item>
+    </string-array>
+    <string-array name="data_namee">
+        <item>Kuil Hujan</item>
+        <item>Rumah Yoga</item>
+        <item>Wisata Pagubugan</item>
+        <item>Wisata Kampung</item>
+        <item>Wisata Korang</item>
+
+    </string-array>
+    <string-array name="data_locatione">
+        <item>Denpasar, Bali</item>
+        <item>Denpasar, Bali</item>
+        <item>Bandung, Jawa Barat</item>
+        <item>Bandung, Jawa Barat</item>
+        <item>Bandung, Jawa Barat</item>
+
+    </string-array>
+    <string-array name="data_photoe">
+        <item>https://res.cloudinary.com/usagi19/image/upload/v1611245065/flur/blog-rain-or-shine_tqq4tk.jpg</item>
+        <item>https://res.cloudinary.com/usagi19/image/upload/v1611245051/flur/austin-1000-1000x630_bzhtlx.jpg</item>
+        <item>https://res.cloudinary.com/budiaji2711/image/upload/v1606488966/images/manuel-cosentino-n--CMLApjfI-unsplash_y4sbqe.jpg</item>
+        <item>https://res.cloudinary.com/budiaji2711/image/upload/v1606488971/images/ycyLUcEoalE_1_j6w283.png</item>
+        <item>https://res.cloudinary.com/budiaji2711/image/upload/v1606488966/images/Rectangle_38_rgl1au.png</item>
+
     </string-array>
     v
     <!-- TODO: Remove or change this placeholder text -->

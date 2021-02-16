@@ -13,8 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PANDU">
-        <activity android:name=".Activity.ConfirmLogOutDialog"
-            android:theme="@style/Theme.Pandu.Dialog"/>
+        <activity android:name=".Activity.DetailScreenActivity"></activity>
+        <activity
+            android:name=".Activity.ConfirmLogOutDialog"
+            android:theme="@style/Theme.Pandu.Dialog" />
         <activity
             android:name=".Activity.VerificationActivity"
             android:theme="@style/Theme.PANDU.NoActionBar" />

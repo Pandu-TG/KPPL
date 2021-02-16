@@ -75,11 +75,11 @@ class ProfileActivity : AppCompatActivity() {
             val uid = currentUser.uid
             nama_profile.text = username
             if (TextUtils.isEmpty(username)) {
-                nama_profile.text = "User"
+                nama_profile.text = "Guest"
             }
             call_name.text = username
             if (TextUtils.isEmpty(username)) {
-                call_name.text = "No Name"
+                call_name.text = "Guest"
             }
             call_email.text = email
             for (profile in it.providerData) {
